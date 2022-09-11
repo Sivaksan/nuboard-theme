@@ -1,6 +1,7 @@
 ---
-title: #1 Megamind's Breakdown
+title: 1 Megamind's Breakdown
 movie: Megamind
+banner: "https://random.imagecdn.app/300/300"
 date-published: 222/2212//212
 release-date: 2010
 description: Nemo enim ipsam volup tatem quia volup tas sit asper natur aut odit aut fugit volup quia volup tas sit asper natur aut odit aut fugit volup tatem sequi nesc iunt.

@@ -1,15 +1,19 @@
 lang: en
 
-title: Your awesome title
-email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+title: lorem Ipsum
+email: mail.rajanydv@gmail.com
+description: >-
+  Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
+  It has survived not only five centuries
+baseurl: ""
+url: ""
 twitter_username: hatchedland
 github_username:  hatchedland
+lastfm_username: rajanyadav
+linkedin_username: rajanydv
+podbean_userid: user-R1vnlbi3jC2m
 
 sass:
   sass_dir: _sass

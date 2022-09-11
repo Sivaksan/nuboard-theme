@@ -7,7 +7,7 @@ layout: page
   <ul>
       {% for item in site.podcasts %}
       <li>
-        <img src={{item.banner}} alt="">
+        <img src={{item.banner}} alt="{{item.title}}">
         <div>
           <span>Date published: {{item.date-published}}</span>
           <a href="{{ item.url | relative_url }}"><h2>{{ item.title }}</h2></a>
