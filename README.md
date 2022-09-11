@@ -1,6 +1,6 @@
 # Nuboard-theme
 ---
-Thank you for choosing this Theme! This Jekyll theme is minimal, responsive, and powerful and is the best suite for your podcast, case study, and project showcase. To use it, you must first clone it on your system or download the zip file.
+This Jekyll theme is minimal, responsive, and powerful and is the best suite for your podcast, case study, and project showcase. To use it, you must first clone it on your system or download the zip file.
 
 [**View Live**](https://rajanyadav.me)
 
