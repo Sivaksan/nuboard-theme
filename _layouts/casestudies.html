@@ -1,0 +1,20 @@
+---
+layout: page
+---
+
+{% for casestudy in site.casestudies %}
+  <section>
+    <img src={{casestudy.banner}} alt={{casestudies.title}}>
+    <h2>{{ casestudy.title }}</h2>
+    <h5>Published on: {{casestudy.date-published}}</h5>
+    <h6>Author {{casestudy.author}}</h5>
+    <p>{{ casestudy.description }}</p>
+    <a href="{{ casestudy.url | relative_url }}">Read the Casestudy</a>
+  </section>
+{% endfor %}
+
+
+
+
+
+

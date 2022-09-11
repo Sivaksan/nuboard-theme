@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+<section class="episode-list">
+  <h2>All episodes</h2>
+  <ul>
+      {% for item in site.podcasts %}
+      <li>
+        <img src={{item.banner}} alt="">
+        <div>
+          <span>Date published: {{item.date-published}}</span>
+          <a href="{{ item.url | relative_url }}"><h2>{{ item.title }}</h2></a>
+          <p>{{item.description}}</p>
+        </div>
+      </li>
+     {% endfor %}
+  </ul>
+ 
+</section>
+

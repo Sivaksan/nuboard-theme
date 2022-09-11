@@ -1,0 +1,79 @@
+lang: en
+
+title: Your awesome title
+email: your-email@example.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: hatchedland
+github_username:  hatchedland
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+#custom collection
+collections:
+  podcasts:
+    output: true
+  casestudies:
+    output: true
+  projects:
+    output: true
+
+
+defaults:
+  - scope:
+      path: ''          # An empty string here means all files in the project
+      type: casestudies
+    values:
+      layout: casestudy
+      comments: true    # Enable comments in posts.
+      toc: true         # Display TOC column in posts.
+      # DO NOT modify the following parameter unless you are confident enough
+      # to update the code of all other post links in this project.
+      permalink: /casestudies/:title/
+  - scope:
+      path: ''          # An empty string here means all files in the project
+      type: projects
+    values:
+      layout: projects
+      comments: true   
+      toc: true 
+      permalink: /projects/:title/
+  - scope:
+      path: ''          # An empty string here means all files in the project
+      type: podcasts
+    values:
+      layout: podcast
+      comments: true   
+      toc: true 
+      permalink: /podcasts/:title/
+
+# Build settings
+theme: nuboard-theme
+# plugins:
+  # - jekyll-feed
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

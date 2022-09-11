@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="/index/">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/podcasts/">PODCASTS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/casestudies/">CASESTUDIES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects/">PROJECTS</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav mr-auto d-flex flex-row justify-content-evenly mt-3 mt-lg-0">
+        <li class="nav-item social">
+          <a href="https://github.com/hatchedland" class="me-4 text-reset">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="nav-item social">
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li class="nav-item social">
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-google"></i>
+          </a>
+        </li>
+        <li class="nav-item social">
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li class="nav-item social">
+          <a href="" class="me-4 text-reset">
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+</nav>
+
+|<script>
+  const activePage = window.location;
+  const navLinks = document.querySelectorAll('nav a').forEach(
+    link => {
+      if(link.href.includes(`${activePage}`)){
+        link.classList.add('active');
+      }
+    }
+  )
+
+</script>
