@@ -1,6 +1,6 @@
 # Nuboard-theme
 
-[**Nuboard-theme**](https://rajanyadav.me) is a minimal, responsive, and powerful  Jekyll theme and is the best suite for your podcast, case study, and project showcase.
+[**Nuboard-theme**](https://nuboard-theme.pages.dev/) is a minimal, responsive, and powerful  Jekyll theme and is the best suite for your podcast, case study, and project showcase.
 
 To use it, you must first clone it on your system or [download](https://github.com/hatchedland/nuboard-theme/archive/refs/heads/master.zip) the zip file.
 
