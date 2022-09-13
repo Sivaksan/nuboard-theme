@@ -1,10 +1,11 @@
 ---
 ---
 
-// @import "styles"
+// @import "/library"
     // Path: layouts
 @import "layouts/projects"
 @import "layouts/casestudies"
+@import "layouts/podcasts"
 // @import "layouts/home";
 @import "components/navbar";
 
@@ -15,9 +16,21 @@
 
 
 
+$primary-color: #ce6969
+$secondary-color: #aeaeae
+$bg-color: #f5f5f5
+$bg-color-dark: #1a1a1a
+$font-color: #000
+$font-color-light: #aeaeae
 
 
+#main-wrapper
+    // background-color: green
+    height: max-content
     
-    
-
-    
+    #main
+        background-color: #fff
+        background-image: url('../img/pattern.svg')
+        // min-width: 90vw
+        margin: 2em 10vw
+        height: 100%

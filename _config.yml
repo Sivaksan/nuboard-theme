@@ -1,6 +1,7 @@
 lang: en
 
-title: lorem Ipsum
+title: Your Name
+pfp: "https://picsum.photos/300/300"
 email: mail.rajanydv@gmail.com
 description: >-
   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -9,6 +10,9 @@ description: >-
   It has survived not only five centuries
 baseurl: ""
 url: ""
+
+podcast_title: "Hatchedland Spoils a Movie"
+podcast_banner: "https://picsum.photos/300/300"
 twitter_username: hatchedland
 github_username:  hatchedland
 lastfm_username: rajanyadav

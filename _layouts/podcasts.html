@@ -2,20 +2,42 @@
 layout: page
 ---
 
-<section class="episode-list">
-  <h2>All episodes</h2>
-  <ul>
-      {% for item in site.podcasts %}
-      <li>
-        <img src={{item.banner}} alt="{{item.title}}">
-        <div>
-          <span>Date published: {{item.date-published}}</span>
-          <a href="{{ item.url | relative_url }}"><h2>{{ item.title }}</h2></a>
-          <p>{{item.description}}</p>
-        </div>
-      </li>
-     {% endfor %}
-  </ul>
- 
-</section>
+<section class="podcast pt-3">
+  <div class="channel-info">
+    <div class="banner">
+      <img src="{{site.podcast_banner}}" alt="" class="img-responsive img-fluid object-fit">
+    </div>
+    <div class="about">
+      <h1>{{site.podcast_title}}</h1>
+      <h6>By Rajan Yadav</h6>
+      <div class="cta">
+        <button class="play-btn">Play</button>
+        <button class="subs-btn">Subscribe</button>
+      </div>
+    </div>
+  </div>
 
+  <div class="episode-list bg-light">
+    <div class="bg-dark p-1 align-items-center m-2 title d-flex justify-content-between flex-wrap gap-1 text-light">
+      <h2 class="pl-3">All episodes</h2>
+      <div class="search pr-5 ">
+        <input type="text" placeholder="Search">
+        <i class="fas fa-search"></i>
+      </div>
+    </div>
+
+    <ul class="d-flex align-content-stretch flex-wrap p-2 list-unstyled">
+      {% for item in site.podcasts %}
+      <li class="p-3">
+        <div class="banner">
+          <img src={{item.banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit">
+        </div>
+        <a href="{{ item.url | relative_url }}">
+          <h3># {{ item.i-d }} {{ item.title }} </h2>
+        </a>
+        <div><span class="bold">Date published:</span> {{item.date-published}}</div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

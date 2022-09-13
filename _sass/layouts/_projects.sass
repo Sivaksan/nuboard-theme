@@ -1,23 +1,20 @@
 
     
     
-.projects-wrap
+.projects
     display: flex
     flex-direction: column
-
-    .page-title
         // font-size: 2.5rem
         font-weight: 700
         margin-bottom: 1rem
-    .projects-list
-        display: flex
-        flex-direction: column
-        margin-bottom: 2rem
+    ul
+        border: 1px solid blue
         li
             display: flex
-            .banner-wrap
+            gap: 1em
+            .banner
                 width: 400px
-                height: 300px
+                // height: 300px
                 overflow: hidden
                 img
                     width: 100%
@@ -25,8 +22,10 @@
                     object-fit: cover
                     object-position: center
                     overflow: hidden
-            .div
-                background: green
+            .about
+                display: flex
+                flex-direction: column
+                justify-content: space-evenly
                 h2
                     font-size: 1.5rem
                     font-weight: 700
@@ -36,9 +35,9 @@
                     margin-bottom: 1rem
                 .techstacks-wrap
                     display: flex
-                    width: min-content
+                    width: fit-content
                     .techstack
-                        width: min-content
+                        width: fit-content
                         margin-right: 1rem
                         a   
                             width: min-content
