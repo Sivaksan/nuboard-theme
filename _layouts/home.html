@@ -24,7 +24,7 @@ layout: default
 				<h2 class="text-light" id="title">New Episodes</h2>
 				<div class="list-group">
 					{% for podcast in site.podcasts limit:1 %}
-					<a href="{{ podcast.url | relative_url }}" class="list-group-item list-group-item-action"
+					<a href="{{ podcast.url | relative_url }}" class="list-group-item list-group-item-action bg-dark bg-gradient text-light"
 						aria-current="true">
 						<div class="d-flex w-100 justify-content-between flex-wrap">
 							<h2 class="mb-1 pr-2">{{podcast.title}}</h2>
@@ -40,7 +40,7 @@ layout: default
 				<h2 class="text-light" id="title">Recent Casestudies</h2>
 				<div class="list-group">
 					{% for casestudy in site.casestudies %}
-					<a href="{{ casestudy.url | relative_url }}" class="list-group-item list-group-item-action"
+					<a href="{{ casestudy.url | relative_url }}" class="list-group-item list-group-item-action bg-dark bg-gradient text-light"
 						aria-current="true">
 						<div class="d-flex w-100 justify-content-between flex-wrap">
 							<h2 class="mb-1 pr-2">{{casestudy.title}}</h2>

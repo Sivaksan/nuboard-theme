@@ -8,30 +8,28 @@ layout: page
       <h5>Presenting</h5>
       <h1>{{site.podcast_title}}</h1>
       <h6>{{site.podcast_description}}</h6>
-      <div class="cta p-3 d-flex justify-content-center my-3">
-        <button type="button" class="btn btn-subscribe">Subscribe <i class="fa fa-rss" aria-hidden="true"></i></button>
-        <div class="input-group px-2" id="search-bar">
-          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-          <button type="button" class="btn btn-outline-primary"> <i class="fas fa-search"></i> Search</button>
+      <div class="cta p-3 d-flex justify-content-center my-3 flex-wrap">
+        <button type="button" class="btn btn-subscribe m-3">Subscribe <i class="fa fa-rss" aria-hidden="true"></i></button>
+        <div class="input-group p-3" id="search-bar">
+          <input type="search" class="form-control rounded shadow-none" placeholder="Search" aria-label="Search" aria-describedby="search-addon" style="border-radius: 0; min-width: 10em; background: none; border: none; border-bottom: 3px solid rgb(101, 101, 101);"/>
+          <button type="button" class="btn btn-primary"> <i class="fas fa-search"></i> Search</button>
         </div>
       </div>
     </div>
   </div>
   
-  <div class="episode-list bg-light">
+  <div class="episode-list">
         <h2 class="text-light" id="title">All Episodes</h2>
-    <ul class="d-flex align-content-stretch flex-wrap p-2 list-unstyled w-100 align-self-sm-stretch">
+    <div class="d-flex align-content-stretch flex-wrap p-2 list-unstyled w-100 align-self-sm-stretch list-group">
       {% for item in site.podcasts %}
-      <li class="p-3 border bg-white">
-        <div class="banner">
-          <img src={{site.podcast_banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit">
-        </div>
-        <a href="{{ item.url | relative_url }}">
-          <h3># {{ item.i-d }} {{ item.title }} </h2>
-        </a>
-        <div><strong>Date published:</strong> {{item.date-published}}</div>
-      </li>
+      <a href="{{ item.url | relative_url }}" class="list-group-item p-3 border-dark bg-dark bg-gradient text-light" style="max-width: 20em; width: fit-content;">
+          <div class="banner">
+            <img src={{site.podcast_banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit" style="scale: 0.9;">
+          </div>
+            <h3># {{ item.i-d }} {{ item.title }} </h2>
+          <div><strong>Date published:</strong> {{item.date-published}}</div>
+      </a>
       {% endfor %}
-    </ul>
+    </div>
   </div>
 </section>
