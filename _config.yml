@@ -1,7 +1,7 @@
 lang: en
 
 title: RAJAN YADAV   # Use BLOCK letters
-pfp: "https://i.postimg.cc/VvzR1Jdb/Profile-Picture-Photo.jpg"
+avatar: "https://i.postimg.cc/VvzR1Jdb/Profile-Picture-Photo.jpg"
 email: mail.rajanydv@gmail.com
 description: >-
   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
@@ -12,6 +12,8 @@ url: ""
 podcast_title: "Hatchedland Spoils a Movie"
 podcast_description: "This podcast is here to take you deep into the depth some compelling stories, acting, direction, musical score, and other aspects of cinematography and what makes them stand out."
 podcast_banner: "https://i.postimg.cc/RhSCnp4h/podcast-cover.png"
+
+# socials
 twitter_username: hatchedland
 github_username:  hatchedland
 lastfm_username: rajanyadav
@@ -22,7 +24,7 @@ sass:
   sass_dir: _sass
   style: compressed
 
-#custom collection
+# website tabs
 collections:
   podcasts:
     output: true

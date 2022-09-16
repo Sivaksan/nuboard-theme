@@ -11,39 +11,59 @@ layout: page
   </div>
 </div>
 
-<div class="p-2 d-flex flex-row flex-wrap">
-  <div>
-    <div class="ui-details clearfix">
-      <h2 id="movie-title">{{page.movie}}</h2>
-      <p>{{page.description}}</p>
-      <!-- Labels -->
-      <a href="#" class="label">{{page.release-date}}</a>
-      <a href="#" class="label">PG - 13</a>
-      <a href="#" class="label">{{page.duration}} min</a>
-      <a href="#" class="label">Action</a>
-      <a href="#" class="label">{{page.genre}}</a>
-      <!-- Paragraph -->
-      <p> <!-- Heading -->
-      <h4><span>Director</span>:</h4>
-      <!-- Director Name -->
-      <h5>{{page.director}}</h5>
-      <!-- Heading -->
-      <h4><span>Writers</span>:</h4>
-      <!-- Writers -->
-      <h5>{{page.writer}}</h5>
-      <!-- Heading -->
-      <h4><span>Stars</span>:</h4>
-      <!-- Stars -->
-      <h5><span>{{page.cast}}</span></h5>
+<div class="d-flex flex-wrap pt-4" style="gap: 1em;">
+  <div class="banner">
+    <img src="" alt="Poster" id="Poster" class="img-fluid object-fit img-responsive">
+  </div>
+  <div class="pl-1">
+    <h2 id="Title">loading...</h2>
+    <ul class="d-flex list-unstyled p-1 flex-wrap" style="color: ce6969;">
+      <li id="Runtime" class="mr-2 my-2 px-2 bg-dark">loading...</li>
+      <li id="Year" class="m-2  px-2 bg-dark">loading...</li>
+      <li id="Rated" class="m-2  px-2 bg-dark">loading...</li>
+      <li id="Genre" class="m-2  px-2 bg-dark">loading...</li>
+    </ul>
+    <h5><strong>Plot </strong>-</h5>
+    <p id="Plot" style="max-width: 30em;">loading...</p>
+    <div class="pd-2">
+      <h5><strong>Director -</strong></h5>
+      <div id="Director">loading...</div>
     </div>
-    
+    <div class="pt-2">
+      <h5><strong>Writers -</strong></h5>
+      <div id="Writer">loading...</div>
+    <div class="pt-2">
+      <h5><strong>Casts -</strong></h5>
+      <div id="Actors">loading...</div>
+    </div>
   </div>
-  <div>
-    <img src="https://random.imagecdn.app/250/250">
-  </div>
-
-  
 </div>
 
+<!-- fetching movie -->
+<script>
+  const getMovieInfo = () => {
 
+    const movieID = '{{ page.movie_id }}';
+    // Change the API key to your own
+    fetch(`http://www.omdbapi.com/?i=${movieID}&plot=full&apikey=2f6435d9`)
+      .then(response => response.json())
+      .then(data => {
+        document.querySelector("#Poster").src = data.Poster
 
+        document.querySelector("#Title").innerText = data.Title
+        document.querySelector("#Director").innerText = data.Director
+        document.querySelector("#Writer").innerText = data.Writer
+        document.querySelector("#Actors").innerText = data.Actors
+
+        document.querySelector("#Plot").innerText = data.Plot
+
+        document.querySelector("#Runtime").innerText = data.Runtime
+        document.querySelector("#Year").innerText = data.Year
+        document.querySelector("#Rated").innerText = data.Rated
+        document.querySelector("#Genre").innerText = data.Genre
+      })
+      .catch(err => console.log(err))
+    }
+  getMovieInfo();
+</script>
+<!-- /fetching movie -->
