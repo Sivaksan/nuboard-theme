@@ -4,12 +4,10 @@ layout: page
 <h1 class="text-center pt-3">CaseStudies</h1>
 <div class="container casestudies py-2 ">
   {% for casestudy in site.casestudies %}
-  <div class="container-wrap px-3 border-dark mb-2 bg-dark bg-gradient text-light">
+  <div class="container-wrap container px-3 border-dark mb-2 bg-dark bg-gradient text-light">
     <div class="row">
-      <div class="col-sm p-2">
-        <div class="banner">
+      <div class="col-sm p-2 banner">
           <img src={{casestudy.banner}} alt={{casestudies.title}} class="img-responsive img-fluid object-fit">
-        </div>
       </div>
       <div class="col-sm pt-2">
           <h2 id="posttitle">{{ casestudy.title }}</h2>
