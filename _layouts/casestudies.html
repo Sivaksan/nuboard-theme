@@ -5,13 +5,11 @@ layout: page
 <div class="container casestudies py-2">
   {% for casestudy in site.casestudies %}
   <div class="container-wrap px-3 bg-dark mb-2">
-    <div class="row">
-      <div class="col-sm p-2">
-        <div class="banner">
-          <img src={{casestudy.banner}} alt={{casestudies.title}} class="img-responsive img-fluid object-fit">
-        </div>
+    <div class="row align-middle">
+      <div class="col-lg p-2 banner">
+          <img src="{{casestudy.banner}}" alt="{{casestudies.title}}" class="img-responsive img-fluid ">
       </div>
-      <div class="col-sm pt-2">
+      <div class="col-lg pt-2">
         <h2 id="posttitle">{{ casestudy.title }}</h2>
         <div class="about">
           <p>Published on: {{casestudy.date-published}}</p>
