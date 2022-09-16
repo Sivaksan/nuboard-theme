@@ -11,10 +11,8 @@ director: Some Director
 cast:   Slorm Mckency. , Maring lawyent , Lowin cleanting
 writer: Joss Whedon (screenplay), Zak Penn (story)
 genre: Animation
+downloadurl: "https://mcdn.podbean.com/mf/web/udw3bj/episode1.mp3"
+shareurl: "https://www.podbean.com/media/share/pb-t5yme-12bcafd"
 ---
 
 <iframe title="#1 Megamind’s Breakdown" allowtransparency="true" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=t5yme-12bcafd-pb&from=pb6admin&share=1&download=1&rtl=0&fonts=Arial&skin=f6f6f6&font-color=auto&logo_link=episode_page&btn-skin=3ab278" width="100%" height="150"></iframe>
-
-[Download](https://mcdn.podbean.com/mf/web/udw3bj/episode1.mp3)
-[Share](https://www.podbean.com/media/share/pb-t5yme-12bcafd)
-

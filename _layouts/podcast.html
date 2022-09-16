@@ -2,11 +2,17 @@
 layout: page
 ---
 
+<h1 class="text-center py-3">Episode 1: {{page.title}}</h1>
+<div class="podcast-player">
+  {{content}}
+  <div class="cta-podcast text-center">
+    <a href="{{page.downloadurl}}"><button type="button" class="btn btn-link">Download</button></a>
+    <a href="{{page.shareurl}}"><button type="button" class="btn btn-link">Share</button></a>
+  </div>
+</div>
 
-<div class="jumbotron d-flex flex-row flex-wrap">
+<div class="bg-white p-2 d-flex flex-row flex-wrap">
   <div>
-    <h1>Episode 1: {{page.title}}</h1>
-    {{content}}
     <div class="ui-details clearfix">
       <h2 id="movie-title">{{page.movie}}</h2>
       <p>{{page.description}}</p>

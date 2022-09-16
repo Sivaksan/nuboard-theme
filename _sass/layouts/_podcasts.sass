@@ -1,16 +1,18 @@
 $font-color-light: #aeaeae
-
+.podcast-player
+    max-width: 50em
+    margin: 0 auto
 .podcast
     .channel-info
-        display: flex
-        gap: 2em
-        align-items: baseline
-        flex-wrap: wrap
+        .about
+            h6
+                max-width: 50em
+                text-align: center
+                margin: 0 auto
         .banner
             text-align: center
-            img
-                align-content: center
-                
+        #search-bar
+            max-width: 20em
     .episode-list
         padding: 1em
         title
@@ -20,8 +22,6 @@ $font-color-light: #aeaeae
             gap: 1em
             li
                 max-width: 20em
-                background: #fff
-                border: 1px solid #ce6969
                 text-decoration: none
                 width: fit-content
                 img

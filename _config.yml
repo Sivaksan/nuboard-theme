@@ -1,18 +1,17 @@
 lang: en
 
-title: Your Name
-pfp: "https://picsum.photos/300/300"
+title: RAJAN YADAV   # Use BLOCK letters
+pfp: "https://i.postimg.cc/VvzR1Jdb/Profile-Picture-Photo.jpg"
 email: mail.rajanydv@gmail.com
 description: >-
   Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-  when an unknown printer took a galley of type and scrambled it to make a type specimen book. 
-  It has survived not only five centuries
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
 baseurl: ""
 url: ""
 
 podcast_title: "Hatchedland Spoils a Movie"
-podcast_banner: "https://picsum.photos/300/300"
+podcast_description: "This podcast is here to take you deep into the depth some compelling stories, acting, direction, musical score, and other aspects of cinematography and what makes them stand out."
+podcast_banner: "https://i.postimg.cc/RhSCnp4h/podcast-cover.png"
 twitter_username: hatchedland
 github_username:  hatchedland
 lastfm_username: rajanyadav

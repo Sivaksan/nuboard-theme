@@ -5,25 +5,11 @@
 
 <body>
   {% include navbar.html %}
-  <div id="main-wrapper" class="d-flex justify-content-center">
-    <div id="main" class="container ">
+  <div id="main-wrapper" class="d-flex justify-content-center bg-light">
+    <div id="main" class="container py-5">
       {{ content }}
     </div>
-  </div>
   {% include footer.html %}
+  </div>
 </body>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.22/dist/vanta.clouds.min.js"></script>
-<script>
-VANTA.CLOUDS({
-  el: "#main-wrapper",
-  mouseControls: true,
-  touchControls: true,
-  gyroControls: false,
-  minHeight: 400.00,
-  minWidth: 400.00
-})
-</script>
-
 </html>

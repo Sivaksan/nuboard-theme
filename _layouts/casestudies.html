@@ -1,20 +1,33 @@
 ---
 layout: page
 ---
-
-<div class="container casestudies">
+<h1 class="text-center pt-3">CaseStudies</h1>
+<div class="container casestudies py-2">
   {% for casestudy in site.casestudies %}
-    <ul>
-      <li>
-        <h5>Published on: {{casestudy.date-published}}</h5>
+  <div class="container-wrap px-3 border mb-2">
+    <div class="row bg-white">
+      <div class="col-sm p-2">
         <div class="banner">
-          <img src={{casestudy.banner}} alt={{casestudies.title}}  class="img-responsive img-fluid object-fit">
+          <img src={{casestudy.banner}} alt={{casestudies.title}} class="img-responsive img-fluid object-fit">
         </div>
-        <h2>{{ casestudy.title }}</h2>
-        <h6>Author {{casestudy.author}}</h6>
-        <p>{{ casestudy.description }}</p>
-        <a href="{{ casestudy.url | relative_url }}">Read the Casestudy</a>
-      </li>
-    </ul>
-  {% endfor %}
+      </div>
+      <div class="col-sm pt-2">
+          <h2 id="posttitle">{{ casestudy.title }}</h2>
+        <div class="about">
+          <p>Published on: {{casestudy.date-published}}</p>
+          <p>{{ casestudy.description }}</p>
+          <ul class="d-flex list-unstyled ">
+            <strong>Tags - </strong>
+            {% for tag in casestudy.tags %}
+            <li class="list-style-none px-2">{{tag}}</li>
+            {% endfor %}
+          </ul>
+          <div class="cta-buttons">
+            <a href="{{ casestudy.url | relative_url }}">READ THE CASESTUDY</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  {% endfor %}
+</div>

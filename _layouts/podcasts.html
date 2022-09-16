@@ -4,38 +4,32 @@ layout: page
 
 <section class="podcast pt-3">
   <div class="channel-info">
-    <div class="banner">
-      <img src="{{site.podcast_banner}}" alt="" class="img-responsive img-fluid object-fit">
-    </div>
-    <div class="about">
+    <div class="about text-center">
+      <h5>Presenting</h5>
       <h1>{{site.podcast_title}}</h1>
-      <h6>By Rajan Yadav</h6>
-      <div class="cta">
-        <button class="play-btn">Play</button>
-        <button class="subs-btn">Subscribe</button>
+      <h6>{{site.podcast_description}}</h6>
+      <div class="cta p-3 d-flex justify-content-center my-3">
+        <button type="button" class="btn btn-subscribe">Subscribe <i class="fa fa-rss" aria-hidden="true"></i></button>
+        <div class="input-group px-2" id="search-bar">
+          <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn btn-outline-primary"> <i class="fas fa-search"></i> Search</button>
+        </div>
       </div>
     </div>
   </div>
-
+  
   <div class="episode-list bg-light">
-    <div class="bg-dark p-1 align-items-center m-2 title d-flex justify-content-between flex-wrap gap-1 text-light">
-      <h2 class="pl-3">All episodes</h2>
-      <div class="search pr-5 ">
-        <input type="text" placeholder="Search">
-        <i class="fas fa-search"></i>
-      </div>
-    </div>
-
-    <ul class="d-flex align-content-stretch flex-wrap p-2 list-unstyled">
+        <h2 class="text-light" id="title">All Episodes</h2>
+    <ul class="d-flex align-content-stretch flex-wrap p-2 list-unstyled w-100 align-self-sm-stretch">
       {% for item in site.podcasts %}
-      <li class="p-3">
+      <li class="p-3 border bg-white">
         <div class="banner">
-          <img src={{item.banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit">
+          <img src={{site.podcast_banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit">
         </div>
         <a href="{{ item.url | relative_url }}">
           <h3># {{ item.i-d }} {{ item.title }} </h2>
         </a>
-        <div><span class="bold">Date published:</span> {{item.date-published}}</div>
+        <div><strong>Date published:</strong> {{item.date-published}}</div>
       </li>
       {% endfor %}
     </ul>

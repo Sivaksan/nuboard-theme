@@ -2,24 +2,56 @@
 layout: default
 ---
 
-
-<div class="container-fluid w-100 h-100 p-2">
-	<div class="row d-flex justify-content-center align-items-center">
-		<div class="col-md-4 my-auto p-2">
-			<div class="lc-block">
-				<img class="img-fluid rounded-circle object-fit img-responsive" alt="Photo by Anders Jildén" src="{{site.pfp}}">
-			</div>
-		</div>
-		<div class="col-md-7 p-2">
-			<!-- /lc-block -->
-			<div class="lc-block mb-3 me-lg-5">
-				<div>
-					<h2>{{site.title}}</h2>
-					<p class="lead">{{site.description}}</p>
-					<a href="#">View my Resume</a>
+<section class="home h-100 my-0">
+	<div class="container-fluid">
+		<div class=" align-items-center">
+			<div class="col-md-7 p-2 text-center" style="margin: 0 auto;">
+				<div class="lc-block mb-3 me-lg-5">
+					<img class="img-fluid rounded-circle object-fit img-responsive" alt="image"
+					src="{{site.pfp}}" style="margin: 0 auto; max-width: 10em;">
+					<div>
+						<h1>{{site.title}}</h1>
+						<p class="lead">{{site.description}}</p>
+					</div>
 				</div>
 			</div>
-			<!-- /lc-block -->
+		</div>
+
+	</div>
+	<div class="container py-5 my-3">
+		<div class="row ">
+			<div class="col-sm p-2">
+				<h2 class="text-light" id="title">New Episodes</h2>
+				<div class="list-group">
+					{% for podcast in site.podcasts limit:1 %}
+					<a href="{{ podcast.url | relative_url }}" class="list-group-item list-group-item-action"
+						aria-current="true">
+						<div class="d-flex w-100 justify-content-between flex-wrap">
+							<h2 class="mb-1 pr-2">{{podcast.title}}</h2>
+							<small>3 days ago</small>
+						</div>
+						<p class="mb-1">Some placeholder content in a paragraph.</p>
+						<small>And some small print.</small>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-sm p-2">
+				<h2 class="text-light" id="title">Recent Casestudies</h2>
+				<div class="list-group">
+					{% for casestudy in site.casestudies %}
+					<a href="{{ casestudy.url | relative_url }}" class="list-group-item list-group-item-action"
+						aria-current="true">
+						<div class="d-flex w-100 justify-content-between flex-wrap">
+							<h2 class="mb-1 pr-2">{{casestudy.title}}</h2>
+							<small>3 days ago</small>
+						</div>
+						<p class="mb-1">Some placeholder content in a paragraph.</p>
+						<small>And some small print.</small>
+					</a>
+					{% endfor %}
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
+</section>
