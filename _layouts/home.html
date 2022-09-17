@@ -7,11 +7,11 @@ layout: default
 		<div class=" align-items-center">
 			<div class="col-md-7 p-2 text-center" style="margin: 0 auto;">
 				<div class="lc-block mb-3 me-lg-5">
-					<img class="img-fluid rounded-circle object-fit img-responsive" alt="image"
-					src="{{site.avatar}}" style="margin: 0 auto; max-width: 10em;">
+					<!-- <img class="img-fluid rounded-circle object-fit img-responsive" alt="image"
+					src="{{site.avatar}}" style="margin: 0 auto; max-width: 10em;"> -->
 					<div>
-						<h1>{{site.title}}</h1>
-						<p class="lead">{{site.description}}</p>
+						<h1 style="font-size: 3em;">{{site.title}}</h1>
+						<h5>{{site.description}}</h5>
 					</div>
 				</div>
 			</div>
@@ -25,37 +25,39 @@ layout: default
 				<div class="list-group">
 					{% for podcast in site.podcasts limit:1 %}
 					<a href="{{ podcast.url | relative_url }}" class="list-group-item list-group-item-action bg-dark bg-gradient text-light"
-						aria-current="true">
-						<div class="d-flex w-100 justify-content-between flex-wrap">
-							<h2 class="mb-1 pr-2">{{podcast.title}}</h2>
-							<small>3 days ago</small>
-						</div>
-						<p class="mb-1">{{podcast.description}}</p>
+						aria-current="true" style="border: 0.2px solid #6c757d;">
+						<h2 class="mb-1 pr-2">{{podcast.title}}</h2>
+						<p class="mb-1">{{podcast.description | truncate: 90}}</p>
 						<ul class="list-unstyled d-flex flex-wrap pt-1" style="gap: 0.5em;">
 							{% for tag in podcast.tags %}
 							<li class="border px-2"><small>{{tag}}</small></li>
-						{% endfor %}
+							{% endfor %}
 						</ul>
+						<small>Posted on - {{podcast.date_released | date: "%b %d, %Y" }}</small>
 					</a>
 					{% endfor %}
 				</div>
+				<div style="background: #444444;" class="text-center"><a href="{{site.url}}/podcasts" style="text-decoration: none;">View all</a></div>
 			</div>
 			<div class="col-sm p-2">
 				<h2 class="text-dark bg-secondary" id="title">Recent Casestudies</h2>
 				<div class="list-group">
 					{% for casestudy in site.casestudies %}
-					<a href="{{ casestudy.url | relative_url }}" class="list-group-item list-group-item-action bg-dark bg-gradient text-light"
-						aria-current="true">
-						<div class="d-flex w-100 justify-content-between flex-wrap">
-							<h2 class="mb-1 pr-2">{{casestudy.title}}</h2>
-							<small>3 days ago</small>
-						</div>
-						<p class="mb-1">Some placeholder content in a paragraph.</p>
-						<small>And some small print.</small>
-					</a>
-					{% endfor %}
-				</div>
+					<a href="{{ casestudy.url | relative_url }}" class="list-group-item list-group-item-action bg-dark text-light"
+					aria-current="true" style="border: 0.2px solid #6c757d;">
+					<h2 class="mb-1 pr-2">{{casestudy.title}}</h2>
+					<p class="mb-1">{{casestudy.description | truncate: 90}}</p>
+					<ul class="list-unstyled d-flex flex-wrap pt-1" style="gap: 0.5em;">
+						{% for tag in casestudy.tags %}
+						<li class="border px-2"><small>{{tag}}</small></li>
+						{% endfor %}
+					</ul>
+					<small>Posted on - {{casestudy.date-published | date: "%b %d, %Y" }}</small>
+				</a>
+				{% endfor %}
+				<div style="background: #444444;" class="text-center"><a href="{{site.url}}/casestudies"style="text-decoration: none;">View all</a></div>
 			</div>
 		</div>
 	</div>
+</div>
 </section>

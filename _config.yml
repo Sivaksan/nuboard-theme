@@ -1,5 +1,5 @@
 lang: en
-
+# EDIT THE VARIABLES ACCORDINGLY
 title: RAJAN YADAV   # Use BLOCK letters
 avatar: "https://i.postimg.cc/VvzR1Jdb/Profile-Picture-Photo.jpg"
 email: mail.rajanydv@gmail.com
@@ -12,12 +12,15 @@ url: ""
 podcast_title: "Hatchedland Spoils a Movie"
 podcast_description: "This podcast is here to take you deep into the depth some compelling stories, acting, direction, musical score, and other aspects of cinematography and what makes them stand out."
 podcast_banner: "https://i.postimg.cc/RhSCnp4h/podcast-cover.png"
+podcast_rss: "https://feed.podbean.com/rajanydv/feed.xml"
 
 # socials
 twitter_username: hatchedland
 github_username:  hatchedland
+trakt_tv_username: rajanydv
 lastfm_username: rajanyadav
 linkedin_username: rajanydv
+instagram_username: rajanydv_
 podbean_userid: user-R1vnlbi3jC2m
 
 sass:
@@ -36,25 +39,23 @@ collections:
 
 defaults:
   - scope:
-      path: ''          # An empty string here means all files in the project
+      path: ''
       type: casestudies
     values:
       layout: casestudy
-      comments: true    # Enable comments in posts.
-      toc: true         # Display TOC column in posts.
-      # DO NOT modify the following parameter unless you are confident enough
-      # to update the code of all other post links in this project.
+      comments: true
+      toc: true
       permalink: /casestudies/:title/
   - scope:
-      path: ''          # An empty string here means all files in the project
+      path: ''
       type: projects
     values:
-      layout: projects
+      # layout: projects
       comments: true   
       toc: true 
-      permalink: /projects/:title/
+      # permalink: /projects/:title/
   - scope:
-      path: ''          # An empty string here means all files in the project
+      path: ''
       type: podcasts
     values:
       layout: podcast
@@ -64,8 +65,8 @@ defaults:
 
 # Build settings
 theme: nuboard-theme
-# plugins:
-  # - jekyll-feed
+plugins:
+  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.

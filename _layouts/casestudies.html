@@ -2,17 +2,34 @@
 layout: page
 ---
 <h1 class="text-center pt-3">CaseStudies</h1>
+<div class=" d-flex flex-wrap text-center pt-2 justify-content-center" style="font-size: 2em; gap: 1em;">
+  <a href="{{site.url}}/feed.casestudy.xml/"><i class="fa fa-rss" aria-hidden="true"></i></a>
+</div>
+<!-- searchbar -->
+<div class="md-form my-2">
+  <input class="form-control bg-dark text-light" type="text" placeholder="Search" aria-label="Search"
+    style="border: 0.2px solid #6c757d; max-width: 20em; margin: 0 auto;" id="EpisodeSearch">
+</div>
+<!-- searchbar -->
+
+<!-- searchresults -->
+<ul id="SearchResults"
+  style="font-size: 2em; list-style: none; text-align: center; padding-bottom: 1em; font-weight: 700;">
+  <h5 style="margin-left: -2em;">Search the topic here</h5>
+</ul>
+<!-- /searchresults -->
+
 <div class="container casestudies py-2">
   {% for casestudy in site.casestudies %}
-  <div class="container-wrap px-3 bg-dark mb-2">
+  <div class="container-wrap px-3 bg-dark mb-2" style="border: 0.2px solid #6c757d;">
     <div class="row align-middle">
       <div class="col-lg p-2 banner">
-          <img src="{{casestudy.banner}}" alt="{{casestudies.title}}" class="img-responsive img-fluid ">
+        <img src="{{casestudy.banner}}" alt="{{casestudies.title}}" class="img-responsive img-fluid ">
       </div>
       <div class="col-lg pt-2">
         <h2 id="posttitle">{{ casestudy.title }}</h2>
         <div class="about">
-          <p>Published on: {{casestudy.date-published}}</p>
+          <p>Published on: {{casestudy.date-published |  date: "%A, %B %d, %y" }}</p>
           <p>{{ casestudy.description }}</p>
           <ul class="d-flex list-unstyled ">
             <strong>Tags - </strong>
@@ -29,3 +46,18 @@ layout: page
   </div>
   {% endfor %}
 </div>
+
+
+
+
+
+<!-- searchbar function -->
+<script src="../js/search.script.js" type="text/javascript"></script>
+<script>
+  SimpleJekyllSearch({
+    searchInput: document.getElementById('EpisodeSearch'),
+    resultsContainer: document.getElementById('SearchResults'),
+    json: '../search.json'
+  })
+</script>
+<!-- /searchbar function -->

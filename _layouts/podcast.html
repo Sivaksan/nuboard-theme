@@ -39,8 +39,10 @@ layout: page
   </div>
 </div>
 
-<!-- fetching movie -->
 <script>
+
+
+  // fetching movie
   const getMovieInfo = () => {
 
     const movieID = '{{ page.movie_id }}';
@@ -65,5 +67,6 @@ layout: page
       .catch(err => console.log(err))
     }
   getMovieInfo();
+
+  // /fetching movie
 </script>
-<!-- /fetching movie -->

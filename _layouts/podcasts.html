@@ -8,32 +8,58 @@ layout: page
       <h5>Presenting</h5>
       <h1>{{site.podcast_title}}</h1>
       <h6>{{site.podcast_description}}</h6>
-      <div class="cta p-3 d-flex justify-content-center my-3 flex-wrap">
-        <button type="button" class="btn btn-subscribe m-3">Subscribe <i class="fa fa-rss" aria-hidden="true"></i></button>
-       <!-- searchbar -->
-        <form class="form-inline">
-          <div class="md-form my-0">
-            <input class="form-control bg-dark" type="text" placeholder="Search" aria-label="Search">
-          </div>
-          <button href="#!" class="btn btn-outline-dark bg-dark text-light btn-md my-0 ml-sm-2" type="submit">Search</button>
-        </form>
-        <!-- /searchbar -->
-      </div>
+        <div class=" d-flex flex-wrap text-center pb-5 pt-2 justify-content-center" style="font-size: 2em; gap: 1em;">
+          <a href="https://www.podbean.com/user-R1vnlbi3jC2m" target="_blank"><i class="fa fa-podcast" aria-hidden="true"></i></a>
+          <a href="https://feed.podbean.com/rajanydv/feed.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
+        </div>
     </div>
   </div>
-  
+
   <div class="episode-list">
-        <h2 class="text-dark bg-secondary" id="title">All Episodes</h2>
+    <h2 class="text-dark bg-secondary" id="title">All Episodes</h2>
     <div class="d-flex align-content-stretch flex-wrap p-2 list-unstyled w-100 align-self-sm-stretch list-group">
       {% for item in site.podcasts %}
-      <a href="{{ item.url | relative_url }}" class="list-group-item p-3 border-dark bg-dark bg-gradient text-light" style="max-width: 20em; width: fit-content;">
-          <div class="banner">
-            <img src={{site.podcast_banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit" style="scale: 0.9;">
-          </div>
-            <h3># {{ item.ID }} {{ item.title }} </h2>
-          <div><strong>Released on - </strong> {{item.date_released}}</div>
+      <a href="{{ item.url | relative_url }}" class="list-group-item p-3 bg-dark bg-gradient text-light"
+        style="max-width: 20em; width: fit-content; border: 0.2px solid #6c757d;">
+        <div class="banner">
+          <img src={{site.podcast_banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit"
+            style="scale: 0.9;">
+        </div>
+        <h3># {{ item.ID }} {{ item.title }} </h2>
+          <div><strong>Released on - </strong> {{item.date_released | date: "%b %d, %Y" }}</div>
       </a>
       {% endfor %}
     </div>
   </div>
 </section>
+
+<script>
+
+  // Searchbar function
+  function search(text, searchData) {
+    const options = {
+      tokenize: true,
+      matchAllTokens: true,
+      threshold: 0,
+      includeMatches: true,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: ['{{podcast.title}}', "excerpt", "tags"]
+    };
+    const fuse = new Fuse(searchData.posts, options);
+    return fuse.search(text);
+  }
+
+  document.addEventListener(
+    "DOMContentLoaded",
+    async function () {
+      const episodeSearch = document.getElementById("EpisodeSearch");
+      const searchData = await fetchSearchData();
+      postSearch.addEventListener("keyup", handlePostSearch(searchData), false);
+    },
+    false
+  );
+
+  console.log(fuse.search(pattern))
+// /Searchbar function
+</script>

@@ -1,0 +1,24 @@
+---
+layout: none
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Casestudies by {{ site.title | xml_escape }}</title>
+		<description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
+		<link>{{ site.url }}/casestudies</link>
+		<atom:link href="{{ site.url }}/feed.casestudy.xml" rel="self" type="application/rss+xml" />
+		{% for casestudy in site.casestudies %}
+			{% unless casestudy.link %}
+			<item>
+				<title>{{ casestudy.title | xml_escape }}</title>
+				<description>{{ casestudy.content | xml_escape }}</description>
+				<pubDate>{{ casestudy.date-published | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+				<link>{{ site.url }}{{ casestudy.url }}</link>
+				<guid isPermaLink="true">{{ site.url }}{{ casestudy.url }}</guid>
+			</item>
+			{% endunless %}
+		{% endfor %}
+	</channel>
+</rss>
