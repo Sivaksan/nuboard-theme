@@ -1,7 +1,6 @@
 ---
 layout: page
 ---
-
 <section class="podcast pt-3">
   <div class="channel-info">
     <div class="about text-center">
@@ -9,7 +8,7 @@ layout: page
       <h1>{{site.podcast_title}}</h1>
       <h6>{{site.podcast_description}}</h6>
         <div class=" d-flex flex-wrap text-center pb-5 pt-2 justify-content-center" style="font-size: 2em; gap: 1em;">
-          <a href="https://www.podbean.com/user-R1vnlbi3jC2m" target="_blank"><i class="fa fa-podcast" aria-hidden="true"></i></a>
+          <a href="https://rajanydv.podbean.com/" target="_blank"><i class="fa fa-podcast" aria-hidden="true"></i></a>
           <a href="https://feed.podbean.com/rajanydv/feed.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
         </div>
     </div>
@@ -32,34 +31,3 @@ layout: page
     </div>
   </div>
 </section>
-
-<script>
-
-  // Searchbar function
-  function search(text, searchData) {
-    const options = {
-      tokenize: true,
-      matchAllTokens: true,
-      threshold: 0,
-      includeMatches: true,
-      maxPatternLength: 32,
-      minMatchCharLength: 1,
-      keys: ['{{podcast.title}}', "excerpt", "tags"]
-    };
-    const fuse = new Fuse(searchData.posts, options);
-    return fuse.search(text);
-  }
-
-  document.addEventListener(
-    "DOMContentLoaded",
-    async function () {
-      const episodeSearch = document.getElementById("EpisodeSearch");
-      const searchData = await fetchSearchData();
-      postSearch.addEventListener("keyup", handlePostSearch(searchData), false);
-    },
-    false
-  );
-
-  console.log(fuse.search(pattern))
-// /Searchbar function
-</script>

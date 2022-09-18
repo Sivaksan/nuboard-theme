@@ -2,7 +2,7 @@
 ---
 
 [
-  {% for post in site.casestudies %}
+  {% for post in site.blog %}
     {
 
       "banner"    : "{{ post.banner | escape }}",

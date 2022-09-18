@@ -31,7 +31,7 @@ sass:
 collections:
   podcasts:
     output: true
-  casestudies:
+  blog:
     output: true
   projects:
     output: true
@@ -40,12 +40,12 @@ collections:
 defaults:
   - scope:
       path: ''
-      type: casestudies
+      type: blog
     values:
-      layout: casestudy
+      layout: post
       comments: true
       toc: true
-      permalink: /casestudies/:title/
+      permalink: /post/:title/
   - scope:
       path: ''
       type: projects
@@ -61,7 +61,7 @@ defaults:
       layout: podcast
       comments: true   
       toc: true 
-      permalink: /podcasts/:title/
+      permalink: /podcast/:title/
 
 # Build settings
 theme: nuboard-theme

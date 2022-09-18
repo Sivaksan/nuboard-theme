@@ -9,8 +9,8 @@ layout: default
 				<div class="lc-block mb-3 me-lg-5">
 					<!-- <img class="img-fluid rounded-circle object-fit img-responsive" alt="image"
 					src="{{site.avatar}}" style="margin: 0 auto; max-width: 10em;"> -->
-					<div>
-						<h1 style="font-size: 3em;">{{site.title}}</h1>
+					<div class="pt-5">
+						<h1 style="font-size: 3em; letter-spacing: -1px;">{{site.title}}</h1>
 						<h5>{{site.description}}</h5>
 					</div>
 				</div>
@@ -37,25 +37,25 @@ layout: default
 					</a>
 					{% endfor %}
 				</div>
-				<div style="background: #444444;" class="text-center"><a href="{{site.url}}/podcasts" style="text-decoration: none;">View all</a></div>
+				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/podcasts" style="text-decoration: none;">View all</a></div>
 			</div>
 			<div class="col-sm p-2">
-				<h2 class="text-dark bg-secondary" id="title">Recent Casestudies</h2>
+				<h2 class="text-dark bg-secondary" id="title">Recent Posts</h2>
 				<div class="list-group">
-					{% for casestudy in site.casestudies %}
-					<a href="{{ casestudy.url | relative_url }}" class="list-group-item list-group-item-action bg-dark text-light"
+					{% for posts in site.blog %}
+					<a href="{{ posts.url | relative_url }}" class="list-group-item list-group-item-action bg-dark text-light"
 					aria-current="true" style="border: 0.2px solid #6c757d;">
-					<h2 class="mb-1 pr-2">{{casestudy.title}}</h2>
-					<p class="mb-1">{{casestudy.description | truncate: 90}}</p>
+					<h2 class="mb-1 pr-2">{{posts.title}}</h2>
+					<p class="mb-1">{{posts.description | truncate: 90}}</p>
 					<ul class="list-unstyled d-flex flex-wrap pt-1" style="gap: 0.5em;">
-						{% for tag in casestudy.tags %}
+						{% for tag in posts.tags %}
 						<li class="border px-2"><small>{{tag}}</small></li>
 						{% endfor %}
 					</ul>
-					<small>Posted on - {{casestudy.date-published | date: "%b %d, %Y" }}</small>
+					<small>Posted on - {{posts.date-published | date: "%b %d, %Y" }}</small>
 				</a>
 				{% endfor %}
-				<div style="background: #444444;" class="text-center"><a href="{{site.url}}/casestudies"style="text-decoration: none;">View all</a></div>
+				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/casestudies"style="text-decoration: none;">View all</a></div>
 			</div>
 		</div>
 	</div>
