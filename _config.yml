@@ -71,6 +71,10 @@ plugins:
 # code syntax highlighter
 highlighter: rouge
 
+# Comments
+disqus-username: disqus_TNJRzbsQPX
+
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.
