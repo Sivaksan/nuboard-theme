@@ -6,11 +6,30 @@ div
         color: #ce6969
 
 #SearchResults
+    margin: 0 auto
+    width: fit-content
     li
-        margin: 0 auto
-        width: fit-content
+        display: flex
+        border-radius: 3px
+        border: 1px solid gray
+        margin-bottom: 3px
+        font-family: 'Bebas Neue'
         a
-            color: #ce6969
+            font-style: italic
+            letter-spacing: -1px
+            border-radius: 3px
+            font-weight: italic
+            text-align: left
+            padding: 3px 2em
+            color: #ccc
+        a:hover
+            text-decoration: none
+            color: #CE6969
+    li:hover
+        background: #222223
+    li:before
+        transform: translate(1em,0.2em)
+        content: url(/assets/img/icon.svg)
 .blog
     max-width: 45em
     .container-wrap

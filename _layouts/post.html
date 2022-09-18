@@ -1,5 +1,21 @@
 ---
 layout: page
 ---
+<div class="tags">
+    <ul class="list-unstyled d-flex" style="gap: 1em">
+        {% for tag in page.tags %}
+        <a href="#">
+           
+            <li style="padding: 5px 10px; font-size: 1.2em; font-style: italic; border: 1px solid; display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                <svg width="15" height="15" viewBox="0 0 178 179" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M8.2448 8.41625L0 65.4053L112.766 178.171L178 112.937L65.2343 0.171021L8.2448 8.41625ZM49.4705 49.642C44.377 54.7355 35.8906 54.7355 30.555 49.642C25.2198 44.5485 25.4615 36.062 30.555 30.7264C35.6485 25.3913 44.1349 25.6329 49.4705 30.7264C54.8057 35.8182 54.564 44.3064 49.4705 49.642Z" fill="#b7dcea"/>
+                    </svg>
+                {{ tag }}
+            </li>
+        </a>
+        {% endfor %}
+    </ul>
+</div>
+
 
 {{ content }}

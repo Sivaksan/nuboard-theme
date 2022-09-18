@@ -5,8 +5,7 @@ title: Megamind's Breakdown
 date_released: 8/09/2022
 downloadurl: "https://mcdn.podbean.com/mf/web/udw3bj/episode1.mp3"
 shareurl: "https://www.podbean.com/media/share/pb-t5yme-12bcafd"
-description: "In this episode I talk about... 
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sapiente numquam enim fuga et deserunt amet ab, velit hic dolores."
+description: "In this episode I talk about..."
 tags: ['podcast','movie','megamind']
 ---
 

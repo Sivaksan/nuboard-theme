@@ -27,7 +27,7 @@ layout: default
 					<a href="{{ podcast.url | relative_url }}" class="list-group-item list-group-item-action bg-dark bg-gradient text-light"
 						aria-current="true" style="border: 0.2px solid #6c757d;">
 						<h2 class="mb-1 pr-2">{{podcast.title}}</h2>
-						<p class="mb-1">{{podcast.description | truncate: 90}}</p>
+						<p class="mb-1" style="min-height: 3em;">{{podcast.description | truncate: 90}}</p>
 						<ul class="list-unstyled d-flex flex-wrap pt-1" style="gap: 0.5em;">
 							{% for tag in podcast.tags %}
 							<li class="border px-2"><small>{{tag}}</small></li>

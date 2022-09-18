@@ -6,14 +6,14 @@ tags: [ Javascript, Frontend, React ]
 References: ["https://dummyurl.com/", "https://dummyurl.com/"]  # website url of references
 ---
 
-# <u>Guide to React</u>
-1. ### [Object Structuring](#Objectstructuring)
-2. ### [Binding](#Binding) 
-3. ### [Super](#Super)
-4. ### [setState()](#setState())
-5. ### [Batching](#Batching)
-6. ### [Using map() to render an array of items](#Usingmap()torenderanarrayofitems)
+#### <u>Guide to React</u>
+# 1. [Object Structuring](#Object-structuring)
+# 2. [Binding](#binding) 
+# 3. [Super](#super)
+# 4. [setState()](#setstate)
+# 5. [batching](#batching)
 
+---
 # Object Structuring
 importing multiple state variables in inside the render method of the component
 ```jsx
@@ -25,6 +25,7 @@ So that we don't need to write  this
 ```
 everytime to access the state variable
 
+---
 # Binding
 [[This]] reference to a method outside of the constructor's scope is not defined for that method unless its bound to its class component.
 
@@ -66,16 +67,15 @@ Like this
 this.function = this.function.bind(this);
 ```
 
-## Binding can be avoided if we are using arrow functions.
+> **__NOTE__** "Binding can be avoided if we are using arrow functions."
 
+---
 # Super
 A call to the constructor of parent class.
-
 *props* keyword is (not necessarily ) to be passed along as an argument to the super method.
-
 This is defined only after this super() call.
 
-Syntax -
+#### Syntax -
 ```jsx
 class Var extends React.Component{
 	constructor(props){
@@ -85,3 +85,69 @@ class Var extends React.Component{
 	...
 }
 ```
+
+---
+# setState()
+```jsx
+this.setState(
+	...
+)
+```
+
+It is a predefined function of the *Component* class of React. 
+Used to modify the value of the variable having some state beforehand.
+
+### WithoutPrevious State
+When updating the value doesn't  need the value of previous state
+
+```jsx
+this.setState({
+	var: ${newvalue}
+});
+```
+
+### With Previous State
+When the changed are made while considering the previous value
+
+```jsx
+this.setState((prevState) => {
+	return {
+		var: newState(prevState)
+	}
+});
+```
+
+
+### A callback.
+To perform some action right after the [[asynchronous]] setState() call ends.
+A callback function is added at the end of every setState call.
+
+Syntax -
+```jsx
+setState((prevState) => {
+	return(
+		...
+	)
+}, () => {}); // this arrowfunction is executed only after our state is updated.
+```
+
+---
+# Batching
+### Used as eventlistener/
+Multiple call to an [[asynchronous]] setState function gets combined inorder for it to render only once.
+
+The state is handled differently in both the forms
+
+### Without Previous State
+While performing batching the callback function of the last setState is considered when rendering.
+
+### With Previous State
+All callbacks are managed as a queue and the value of previous state is update with every setState function called.
+This way we get a single rendered output of the combined count of all the setState functions present within.
+
+### Used with promises,etc/
+in a [[synchronous]] environment the behaviour of setState() is not quite the same.
+
+the Call to setState is rendered as many times as the function is called, the value of the state is altered as that many times as well.
+
+---
