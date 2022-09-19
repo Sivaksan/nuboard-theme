@@ -2,6 +2,7 @@
 title: Guide to React
 date-published: 11/08/2000
 description: Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter
+# banner: "https://picsum.photos/700/300"
 tags: [ Javascript, Frontend, React ]
 References: ["https://dummyurl.com/", "https://dummyurl.com/"]  # website url of references
 ---
