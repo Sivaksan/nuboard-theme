@@ -4,8 +4,7 @@ title: RAJAN YADAV   # Use BLOCK letters
 avatar: "https://i.postimg.cc/VvzR1Jdb/Profile-Picture-Photo.jpg"
 email: mail.rajanydv@gmail.com
 description: >-
-  "I am doing my bachelors in Electronics & Telecommunication.
-  Here I post stuff related to technology and programming, or whatever stuff I find interesting."
+  A core oriented frontend developer perplexing vision through UI/UX sometimes boggling in podcasts xD!
 baseurl: ""
 url: ""
 
@@ -69,7 +68,13 @@ plugins:
   - jekyll-feed
 
 # code syntax highlighter
-highlighter: rouge
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: true
+  syntax_highlighter: rouge
 
 # Comments
 disqus-username: disqus_TNJRzbsQPX
