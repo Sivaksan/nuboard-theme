@@ -7,10 +7,8 @@ layout: default
 		<div class=" align-items-center">
 			<div class="col-md-7 p-2 text-center" style="margin: 0 auto;">
 				<div class="lc-block mb-3 me-lg-5">
-					<!-- <img class="img-fluid rounded-circle object-fit img-responsive" alt="image"
-					src="{{site.avatar}}" style="margin: 0 auto; max-width: 10em;"> -->
 					<div class="pt-5">
-						<h1 style="font-size: 3em; letter-spacing: -1px;">{{site.title}}</h1>
+						<h1 style="font-size: 3em; letter-spacing: -1px;">{{site.title}}♂</h1>
 						<div style="font-size: 1.2em;">{{site.description}}</div>
 					</div>
 				</div>
@@ -37,7 +35,7 @@ layout: default
 					</a>
 					{% endfor %}
 				</div>
-				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/podcasts" style="text-decoration: none;">View all</a></div>
+				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/podcast" style="text-decoration: none;">View all</a></div>
 			</div>
 			<div class="col-sm p-2">
 				<h2 class="text-dark bg-secondary" id="title">Recent Posts</h2>
@@ -55,7 +53,7 @@ layout: default
 					<small>Posted on - {{posts.date-published | date: "%b %d, %Y" }}</small>
 				</a>
 				{% endfor %}
-				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/casestudies"style="text-decoration: none;">View all</a></div>
+				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/blog/"style="text-decoration: none;">View all</a></div>
 			</div>
 		</div>
 	</div>

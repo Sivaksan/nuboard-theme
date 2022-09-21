@@ -1,7 +1,10 @@
 ---
 layout: page
+comment: true
 ---
-<!-- <div class="tags">
+<!-- 
+   {% if page.tags.size > 0 %} 
+  <div class="tags">
     <ul class="list-unstyled d-flex" style="gap: 1em">
         {% for tag in page.tags %}
         <a href="#">
@@ -15,20 +18,9 @@ layout: page
         </a>
         {% endfor %}
     </ul>
-</div> -->
- 
-<div class="post-categories">
-    {% if post %}
-      {% assign categories = post.categories %}
-    {% else %}
-      {% assign categories = page.categories %}
-    {% endif %}
-    {% for category in categories %}
-    <a href="{{site.baseurl}}/categories/#{{category|slugize}}">{{category}}</a>
-    {% unless forloop.last %}&nbsp;{% endunless %}
-    {% endfor %}
-  </div>
-
-<div>
-  {{ content }}
 </div>
+{% endif %}  -->
+
+  {{ content }}
+
+{% include disqus.html %}
