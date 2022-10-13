@@ -3,59 +3,75 @@ layout: default
 ---
 
 <section class="home h-100 my-0">
-	<div class="container-fluid">
-		<div class=" align-items-center">
-			<div class="col-md-7 p-2 text-center" style="margin: 0 auto;">
-				<div class="lc-block mb-3 me-lg-5">
-					<div class="pt-5">
-						<h1 style="font-size: 3em; letter-spacing: -1px;">{{site.title}}♂</h1>
-						<div style="font-size: 1.2em;">{{site.description}}</div>
-					</div>
+	<div class="p-2 text-center mx-auto mb-3">
+		<div class="pt-5">
+			<h1 class="text-4xl lg:text-6xl tracking-tight font-page-title">{{site.title}}♂</h1>
+			<div class="my-2 text-xl lg:text-2xl">{{site.description}}</div>
+		</div>
+	</div>
+	<div class="flex gap-3 flex-wrap">
+		<div class="grow bg-gray-700 rounded relative">
+			<h2 class="text-xl font-heading text-center rounded py-1">New Episodes</h2>
+			<div class="list-group">
+				{% for podcast in site.podcasts limit:3 %}
+				<div class="bg-slate-900 p-2 border-b-2 border-slate-500 rounded">
+					<a href="{{ podcast.url | relative_url }}" class="" aria-current="true">
+						<h2 class="mb-1 pr-2 text-2xl">{{podcast.title}}</h2>
+					</a>
+					<p class="mb-1 h-12">{{podcast.description | truncate: 90}}</p>
+					<ul class="list-unstyled flex flex-wrap pt-1 gap-2">
+						{% for tag in podcast.tags %}
+						<li>
+							<a href="#" class="border px-2 flex gap-1 items-center rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+									stroke="currentColor" class="w-5 h-5">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+									<path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+								</svg>
+								<div>{{tag}}</div>
+							</a>
+						</li>
+						{% endfor %}
+					</ul>
+					<small>Posted on - {{podcast.date_released | date: "%b %d, %Y" }}</small>
 				</div>
+				{% endfor %}
+			</div>
+			<div class="text-center mt-1 bg-gray-800 absolute bottom-0 w-full"><a href="{{site.url}}/blog/"
+					class="no-underline">View all</a>
 			</div>
 		</div>
-
-	</div>
-	<div class="container py-5 my-3">
-		<div class="row ">
-			<div class="col-sm p-2">
-				<h2 class="text-dark bg-secondary" id="title">New Episodes</h2>
-				<div class="list-group">
-					{% for podcast in site.podcasts limit:1 %}
-					<a href="{{ podcast.url | relative_url }}" class="list-group-item list-group-item-action bg-dark bg-gradient text-light"
-						aria-current="true" style="border: 0.2px solid #6c757d;">
-						<h2 class="mb-1 pr-2">{{podcast.title}}</h2>
-						<p class="mb-1" style="min-height: 3em;">{{podcast.description | truncate: 90}}</p>
-						<ul class="list-unstyled d-flex flex-wrap pt-1" style="gap: 0.5em;">
-							{% for tag in podcast.tags %}
-							<li class="border px-2"><small>{{tag}}</small></li>
-							{% endfor %}
-						</ul>
-						<small>Posted on - {{podcast.date_released | date: "%b %d, %Y" }}</small>
+		<div class="grow bg-gray-700 rounded relative">
+			<h2 class="text-xl font-heading text-center rounded py-1">Recent Posts</h2>
+			<div class="list-group">
+				{% for posts in site.blog limit:3 %}
+				<div class="bg-slate-900 border-b-2 border-gray-500 p-2 rounded">
+					<a href="{{ posts.url | relative_url }}" class="" aria-current="true">
+						<h2 class="mb-1 pr-2 text-2xl">{{posts.title}}</h2>
 					</a>
-					{% endfor %}
-				</div>
-				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/podcast" style="text-decoration: none;">View all</a></div>
-			</div>
-			<div class="col-sm p-2">
-				<h2 class="text-dark bg-secondary" id="title">Recent Posts</h2>
-				<div class="list-group">
-					{% for posts in site.blog %}
-					<a href="{{ posts.url | relative_url }}" class="list-group-item list-group-item-action bg-dark text-light"
-					aria-current="true" style="border: 0.2px solid #6c757d;">
-					<h2 class="mb-1 pr-2">{{posts.title}}</h2>
-					<p class="mb-1">{{posts.description | truncate: 90}}</p>
-					<ul class="list-unstyled d-flex flex-wrap pt-1" style="gap: 0.5em;">
+					<p class="mb-1 h-12">{{posts.description | truncate: 90}}</p>
+					<ul class="list-unstyled flex flex-wrap pt-1 gap-2">
 						{% for tag in posts.tags %}
-						<li class="border px-2"><small>{{tag}}</small></li>
+						<li>
+							<a href="#" class="border px-2 flex gap-1 items-center rounded-full">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+									stroke="currentColor" class="w-5 h-5">
+									<path stroke-linecap="round" stroke-linejoin="round"
+										d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" />
+									<path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z" />
+								</svg>
+								<div>{{tag}}</div>
+							</a>
+						</li>
 						{% endfor %}
 					</ul>
 					<small>Posted on - {{posts.date-published | date: "%b %d, %Y" }}</small>
-				</a>
+				</div>
 				{% endfor %}
-				<div style="background: #444444;" class="text-center mt-1"><a href="{{site.url}}/blog/"style="text-decoration: none;">View all</a></div>
 			</div>
+			<div class="text-center bg-gray-800 absolute bottom-0 w-full"><a href="{{site.url}}/blog/"
+					class="no-underline">View all</a></div>
 		</div>
 	</div>
-</div>
 </section>

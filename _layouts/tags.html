@@ -1,0 +1,24 @@
+---
+layout: page
+---
+
+<div id="tags" class="flex flex-wrap ml-xl-2 mr-xl-2">
+ssa
+  {% assign tags = "" | split: "" %}
+  sssssasa
+  {% for t in site.tags %}
+  dsdsds
+    {% assign tags = tags | push: t[0] %}
+  {% endfor %}
+
+  {% assign sorted_tags = tags | sort_natural %}
+
+  {% for tag in stags %}
+    <div>
+      <a class="tag" href="{{ t | slugify | url_encode | prepend: '/tags/' | append: '/' | relative_url }}">
+        {{ t }}<span class="text-muted">{{ site.tags[t].size }}</span>
+      </a>
+    </div>
+  {% endfor %}
+
+</div>

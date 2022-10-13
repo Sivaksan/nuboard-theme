@@ -5,26 +5,29 @@ layout: page
   <div class="channel-info">
     <div class="about text-center">
       <h5>Presenting</h5>
-      <h1>📽 {{site.podcast_title}}</h1>
-      <div style="font-size: 1.2em;" class="description">{{site.podcast_description}}</div>
-        <div class=" d-flex flex-wrap text-center pb-5 pt-2 justify-content-center" style="font-size: 2em; gap: 1em;">
-          <a href="https://rajanydv.podbean.com/" target="_blank"><i class="fa fa-podcast" aria-hidden="true"></i></a>
-          <a href="https://feed.podbean.com/rajanydv/feed.xml" target="_blank"><i class="fa fa-rss" aria-hidden="true"></i></a>
-        </div>
+      <h1 class="text-5xl font-page-title">{{site.podcast_title}}</h1>
+      <div class="description text-lg">{{site.podcast_description}}</div>
+      <div class="flex flex-wrap text-center pb-5 pt-2 justify-center gap-3 text-xl">
+        <a href="https://rajanydv.podbean.com/" target="_blank" class="border border-gray-500 rounded-full px-3"><i
+            class="fa fa-podcast px-2" aria-hidden="true"></i>Listen on Podbean</a>
+        <a href="https://feed.podbean.com/rajanydv/feed.xml" target="_blank"
+          class="border border-gray-500 rounded-full px-3"><i class="fa fa-rss px-2" aria-hidden="true"></i>Subscribe
+          via RSS</a>
+      </div>
     </div>
   </div>
 
   <div class="episode-list">
-    <h2 class="text-dark bg-secondary" id="title">All Episodes</h2>
-    <div class="d-flex align-content-stretch flex-wrap p-2 list-unstyled w-100 align-self-sm-stretch list-group">
+    <h2 class="rounded bg-slate-700 text-xl text-center font-heading">All Episodes</h2>
+    <ul class="flex justify-center flex-wrap gap-2 list-unstyled w-100 py-2">
       {% for item in site.podcasts %}
-      <a href="{{ item.url | relative_url }}" class="list-group-item p-3 bg-dark bg-gradient text-light"
-        style="max-width: 20em; width: fit-content; border: 0.2px solid #6c757d;">
+      <li class="list-group-item p-3 bg-slate-900 w-fit max-w-xs rounded">
         <div class="banner">
-          <img src={{site.podcast_banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit"
-            style="scale: 0.9;">
+          <img src={{site.podcast_banner}} alt="{{item.title}}" class="img-responsive img-fluid object-fit">
         </div>
-        <h3># {{ item.ID }} {{ item.title }} </h2>
+        <a href="{{ item.url | relative_url }}">
+          <h3 class="text-2xl"># {{ item.ID }} {{ item.title }} </h2>
+        </a>
           <div><strong>Released on - </strong> {{item.date_released | date: "%b %d, %Y" }}</div>
       </a>
       {% endfor %}

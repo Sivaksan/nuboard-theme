@@ -2,30 +2,27 @@
 layout: page
 ---
 
-<h1 class="text-center py-3">Episode 1: {{page.title}}</h1>
+<h1 class="text-center py-3 font-page-title text-5xl">Episode 1: {{page.title}}</h1>
 <div class="podcast-player">
-  {{content}}
-  <div class="cta-podcast text-center">
-    <a href="{{page.downloadurl}}"><button type="button" class="btn btn-link">Download</button></a>
-    <a href="{{page.shareurl}}"><button type="button" class="btn btn-link">Share</button></a>
-  </div>
+    {{content}}
 </div>
 
-<div class="d-flex flex-wrap pt-4" style="gap: 1em;">
+
+<div class="flex flex-wrap pt-4" style="gap: 1em;">
   <div class="banner">
     <img src="" alt="Poster" id="Poster" class="img-fluid object-fit img-responsive">
   </div>
   <div class="pl-1">
-    <h2 id="Title">loading...</h2>
-    <ul class="d-flex list-unstyled p-1 flex-wrap" style="color: ce6969;">
-      <li id="Runtime" class="mr-2 my-2 px-2 bg-dark">loading...</li>
-      <li id="Year" class="m-2  px-2 bg-dark">loading...</li>
-      <li id="Rated" class="m-2  px-2 bg-dark">loading...</li>
-      <li id="Genre" class="m-2  px-2 bg-dark">loading...</li>
+    <h2 class="font-heading text-3xl" id="Title">loading...</h2>
+    <ul class="flex list-unstyled p-1 flex-wrap" style="color: ce6969;">
+      <li id="Runtime" class="mr-2 my-2 px-2 bg-slate-900">loading...</li>
+      <li id="Year" class="m-2  px-2 bg-slate-900">loading...</li>
+      <li id="Rated" class="m-2  px-2 bg-slate-900">loading...</li>
+      <li id="Genre" class="m-2  px-2 bg-slate-900">loading...</li>
     </ul>
     <h5><strong>Plot </strong>-</h5>
     <p id="Plot" style="max-width: 30em;">loading...</p>
-    <div class="pd-2">
+    <div class="pb-2">
       <h5><strong>Director -</strong></h5>
       <div id="Director">loading...</div>
     </div>

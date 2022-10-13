@@ -1,14 +1,11 @@
-<nav class="nav navbar center fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-switch">
-        <div class="switch-element"></div>
-        <div class="switch-element"></div>
-      </span>
+<nav class="navbar fixed w-full bg-slate-900 font-md">
+    <button class="navbar-toggler border-0 lg:hidden" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars" aria-hidden="true"></i>      
     </button>
     <!-- <a class="navbar-brand" href="#">Navbar</a> -->
   
-    <div class="collapse navbar-collapse justify-content-center" id="navbarTogglerDemo03">
-      <ul class="navbar-nav mt-2 mr-5 mt-lg-0">
+    <div class="lg:flex justify-center items-center" id="navbarTogglerDemo03">
+      <ul class="lg:flex mr-5">
         <li class="nav-item">
           <a class="nav-link" href="{{site.url}}/index/">HOME</a>
         </li>
@@ -25,38 +22,40 @@
           <a class="nav-link" href="{{site.url}}/about/">ABOUT</a>
         </li>
       </ul>
-      <ul class="navbar-nav d-flex flex-row  mt-3 mt-lg-0">
-        <li class="nav-item social">
-          <a href="mailto:{{site.email}}" class="me-4 text-reset" target="_blank">
+      <ul class="flex flex-wrap gap-3 items-center">
+        <li class="text-2xl">
+          <a href="mailto:{{site.email}}" class="text-reset" target="_blank">
             <i class="fa fa-at" aria-hidden="true"></i>
           </a>
         </li>
-        <li class="nav-item social">
+        <li class="text-2xl">
           <a href="https://github.com/{{site.github_username}}" class="me-4 text-reset" target="_blank">
             <i class="fab fa-github"></i>
           </a>
         </li>
-        <li class="nav-item social">
+        <li class="text-2xl">
           <a href="https://last.fm/{{site.lastfm_username}}" class="me-4 text-reset" target="_blank">
             <i class="fa fa-lastfm" aria-hidden="true"></i>
           </a>
         </li>
-        <li class="nav-item social">
+        <li class="text-2xl">
           <a href="https://www.linkedin.com/in/{{site.linkedin_username}}" class="me-4 text-reset" target="_blank">
             <i class="fab fa-linkedin" aria-hidden="true"></i>
           </a>
         </li>
-        <li class="nav-item social">
+        <li class="text-2xl">
           <a href="https://instagram.com/rajanydv_" class="me-4 text-reset" target="_blank">
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
         </li>
-        <li class="nav-item social">
+        <li class="text-2xl">
           <a href="https://trakt.tv/users/{{site.trakt_tv_username}}" class="me-4 text-reset" target="_blank">
-            <i class="fa fa-ticket" aria-hidden="true"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" fill="#b4dcea">
+              <path d="M16 32c-8.817 0-16-7.183-16-16s7.183-16 16-16c8.817 0 16 7.183 16 16s-7.183 16-16 16zM16 1.615c-7.932 0-14.385 6.453-14.385 14.385s6.453 14.385 14.385 14.385c7.932 0 14.385-6.453 14.385-14.385s-6.453-14.385-14.385-14.385zM6.521 24.708c2.339 2.557 5.724 4.152 9.479 4.152 1.917 0 3.735-0.417 5.369-1.167l-8.932-8.907zM25.573 24.62c2.052-2.281 3.307-5.323 3.307-8.625 0-5.177-3.047-9.62-7.421-11.677l-8.12 8.099 12.219 12.204zM12.401 13.38l-6.765 6.74-0.907-0.907 15.421-15.416c-1.301-0.437-2.692-0.677-4.151-0.677-7.115-0.005-12.885 5.765-12.885 12.88 0 2.896 0.953 5.573 2.588 7.735l6.74-6.74 0.479 0.437 9.663 9.661c0.197-0.109 0.38-0.219 0.556-0.353l-10.703-10.672-6.468 6.473-0.907-0.905 7.38-7.381 0.479 0.443 11.281 11.251c0.177-0.136 0.339-0.292 0.5-0.421l-12.181-12.157-0.109 0.021zM16.464 14.749l-0.901-0.9 6.38-6.385 0.907 0.916-6.385 6.38zM22.521 5.979l-7.36 7.36-0.907-0.907 7.36-7.359 0.907 0.911z"/>
+            </svg>
           </a>
         </li>
-        <li class="nav-item social">
+        <li class="text-2xl">
           <a href="https://www.podbean.com/user-R1vnlbi3jC2m" class="me-4 text-reset"target="_blank">
             <i class="fa fa-podcast" aria-hidden="true"></i>
           </a>

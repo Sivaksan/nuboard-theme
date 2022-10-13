@@ -3,10 +3,10 @@
 <html lang="{{ site.lang }}" {{ prefer_mode }}>
 {% include head.html %}
 
-<body style="background-color: #272727; height: max-content; color: #ddd; font-family: 'Lato', sans-serif;">
+<body class="bg-slate-800 h-max text-gray-400 font-content">
   {% include navbar.html %}
-  <div id="main-wrapper" class="d-flex justify-content-center">
-    <div id="main" class="">
+  <div id="main-wrapper" class="flex justify-center">
+    <div id="main">
       {{ content }}
     </div>
   {% include footer.html %}
