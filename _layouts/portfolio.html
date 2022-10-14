@@ -3,35 +3,79 @@ layout: default
 ---
 
 <section class="projects">
-    <div class="text-center">          
+    <div class="text-center">
         <h1 class="font-bold text-5xl font-page-title">
             Portfolio
         </h1>
     </div>
-    <ul class="mt-5 flex flex-column gap-3">
+    <ul class="mt-5 flex flex-col gap-3">
         {% for project in site.projects %}
-        <li class="px-3 py-3 list-unstyled bg-slate-900 flex relative">
+        <li class="px-3 py-3 list-unstyled bg-slate-900 flex flex-wrap gap-2">
             <div>
                 <div class="banner">
                     <img src="{{ project.banner }}" alt="{{ project.title }}">
                 </div>
             </div>
-            <div class="p-2">
+            <div class="p-2 flex flex-col gap-1">
                 <h2 class="text-3xl font-heading">{{ project.title }}</h2>
-                    <p class="max-w-md">{{ project.description }}</p>
-                    <ul class="techstacks-wrap">
-                        {% for techstack in project.techstack %}
-                        <li class="techstack">
-                            <i class="fa fa-{{techstack}}" aria-hidden="true"></i>
-                        </li>
-                        {% endfor %}
+                <p class="max-w-md">{{ project.description }}</p>
+                <div class="flex items-center">
+                    <ul id="Techstack" >
                     </ul>
-                <div class="px-2 absolute bottom-3 bg-blue-400 h-fit">
-                    <a href="#" class="text-center rounded p-4" target="_blank">VIEW LIVE</a>
-                    <a href="#" class="text-center rounded p-4" target="_blank">SOURCE CODE</a>
+                    <ul id="TechstackSeekbar">
+                    </ul>
+                </div>
+                <div class="flex gap-3">
+                    <a href="#" class="text-center rounded p-2 bg-gray-700" target="_blank">VIEW LIVE</a>
+                    <a href="#" class="text-center rounded p-2 bg-gray-700" target="_blank">SOURCE CODE</a>
                 </div>
             </div>
         </li>
+    <script>
+        // fetching techstack
+        const getTechstack = () => {
+    
+            const username = '{{ site.github_username }}';
+            const repository = '{{ project.title }}';
+    
+            fetch(`https://api.github.com/repos/${username}/${repository}/languages`)
+                .then(response => response.json())
+                .then(data => {
+                    var output = '';
+                    // seekbar
+                    const seekbar = document.getElementById('TechstackSeekbar')
+                    seekbar.style.width = '100%';
+                    const techstack = document.getElementById('Techstack');
+                    // totalvalue function
+                    const sumValues = obj => Object.values(obj).reduce((a, b) => a + b);
+                    const totalvalue = sumValues(data);
+                    for (var languages in data) {
+                        console.log(languages)
+                        // languages
+                        if (data.hasOwnProperty(languages)) {
+                            var value = data[languages];
+                            console.log(value)
+                            const seekvalue = document.createElement('li');
+                            // seekvalue width function
+                            const seeklength = (value / totalvalue) *(seekbar.offsetWidth)/4;
+                            console.log(seeklength)
+                            seekvalue.style.width = (`${seeklength}%`);
+                            seekvalue.style.borderRadius = ('5px');
+                            seekvalue.style.height = ('1.2em');
+                            seekvalue.style.margin = ('0.7em');
+                            seekvalue.style.background = ('blue');
+                            seekbar.appendChild(seekvalue);
+                            techstack.innerHTML += `<li class='border border-red-200 rounded-full px-2 my-1 w-full'>${languages}</li>`;
+                        }
+                    }
+                    console.log(data)
+                })
+                .catch(err => console.log(err))
+        }
+        getTechstack();
+    
+        // /fetching techstack
+    </script>
         {% endfor %}
     </ul>
 </section>

@@ -1,11 +1,7 @@
 ---
-title: "Foo Bar Identity"
+title: nuboard-theme # use github repo name
 description: "Foo Bar design system including logo mark, website design, and branding applications."
-banner: "https://i.postimg.cc/YSFpWKNG/portal-line-1.png"
-techstack: 
-  - react
-  - electronJS
-  - tailwind
+banner: https://random.imagecdn.app/400/400
 sourcecode: https://random.imagecdn.app/400/400
 url: https://random.imagecdn.app/400/400
 ---
