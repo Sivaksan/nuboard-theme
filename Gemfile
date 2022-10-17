@@ -6,3 +6,4 @@ gemspec
 gem "webrick", "~> 1.7"
 gem 'jekyll-feed'
 gem 'jekyll-archives'
+gem 'jekyll-postcss'

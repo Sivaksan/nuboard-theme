@@ -140,14 +140,21 @@
                 }
             }
         };
-    ! function (t) {
-        let i = {
-            searchInput: null,
-            resultsContainer: null,
+       const taglist = document.createElement('ul');
+    //    for (let i = 0; i < tags.length; i++) {
+            //   taglist.innerHTML += '<li>' + tags[i] + '</li>';
+            //   console.log(t);
+            // }
+            ! function (t) {
+                
+          
+                let i = {
+                    searchInput: null,
+                    resultsContainer: null,
             json: [],
             success: Function.prototype,
             searchResultTemplate: (
-                '<div class="break-normal p-2 bg-slate-900 m-1 rounded"><a href="{url}" class="text-2xl" title="{desc}">> {title}</a><div><strong>Tags - </strong>{tags}</div></div>'
+                '<div class="break-normal p-2 bg-slate-900 m-1 rounded"><a href="{url}" class="text-2xl" title="{desc}">> {title}</a><div class="opacity-50"><strong>Tags - </strong>{tags}</div></div>'
             ),
             templateMiddleware: Function.prototype,
             sortMiddleware: function () {
@@ -158,7 +165,7 @@
             fuzzy: !1,
             debounceTime: null,
             exclude: []
-        },
+    },
             n;
         const e = function (t, e) {
             e ? (clearTimeout(n), n = setTimeout(t, e)) : t.call()

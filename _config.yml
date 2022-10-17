@@ -13,11 +13,24 @@ podcast_description: "This podcast is here to take you deep into the depth some 
 podcast_banner: "https://i.postimg.cc/RhSCnp4h/podcast-cover.png"
 podcast_rss: "https://feed.podbean.com/rajanydv/feed.xml"
 
-# list your skills
-skills:
-  - coding
-  - podcasting
-  - drawing
+# list your skillSets in the following category
+toolkit:
+  designing:
+    - Figma
+  frontend:
+    - TailwindCSS
+    - VanillaJS
+    - Jekyll
+    - React
+    - NextJS
+    - ReactNative
+  backend:
+    - Django
+    - Supabase
+    - MySQL
+    - PostgreSQL
+    - Cloudflare
+
 
 # socials
 twitter_username: hatchedland
@@ -81,6 +94,10 @@ theme: nuboard-theme
 plugins:
   - jekyll-feed
   - jekyll-archives
+  # - jekyll-postcss
+
+# postcss:
+#   cache: false
 
 jekyll-archives:
   enabled: [categories, tags]

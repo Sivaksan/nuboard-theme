@@ -1,23 +1,31 @@
 ---
 ---
 
-// @import "/library"
-    // Path: layouts
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+
 @import "layouts/projects"
 @import "layouts/blog"
 @import "layouts/podcasts"
-// @import "layouts/home";
 @import "layouts/about";
-@import "components/navbar"
-// @import "components/buttons";
 @import "components/podcast_player";
 @import "components/syntax-highlighting";
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
    
 #main-wrapper
     #main
-        margin: 5em 1em 0em 1em
+        margin: 3em 1em 0em 1em
         max-width: 70em
+        #heading
+            font-family: 'Oswald', sans-serif
+        #page-title
+            font-family: 'Bebas Neue', cursive
 
 #resultsContainer
     width: max-content

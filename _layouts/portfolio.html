@@ -4,20 +4,20 @@ layout: default
 
 <section class="projects">
     <div class="text-center">
-        <h1 class="font-bold text-5xl font-page-title">
+        <h1 class="font-bold text-5xl" id="page-title">
             Portfolio
         </h1>
     </div>
     <ul class="mt-5 flex flex-col gap-3">
         {% for project in site.projects %}
-        <li class="px-3 py-3 list-unstyled bg-slate-900 flex flex-wrap gap-2">
+        <li class="px-3 py-3 list-unstyled bg-slate-900 flex flex-wrap gap-2 justify-center">
             <div>
                 <div class="banner">
                     <img src="{{ project.banner }}" alt="{{ project.title }}">
                 </div>
             </div>
-            <div class="p-2 flex flex-col gap-1">
-                <h2 class="text-3xl font-heading">{{ project.title }}</h2>
+            <div class="p-2 flex flex-col gap-2">
+                <h2 class="text-3xl" id="heading">{{ project.title }}</h2>
                 <p class="max-w-md">{{ project.description }}</p>
                 <div class="flex items-center">
                     <ul id="Techstack" >
@@ -25,9 +25,9 @@ layout: default
                     <ul id="TechstackSeekbar">
                     </ul>
                 </div>
-                <div class="flex gap-3">
-                    <a href="#" class="text-center rounded p-2 bg-gray-700" target="_blank">VIEW LIVE</a>
-                    <a href="#" class="text-center rounded p-2 bg-gray-700" target="_blank">SOURCE CODE</a>
+                <div class="flex mt-5 gap-3">
+                    <a href="#" class="text-center text-slate-900 rounded py-2 px-4 bg-sky-600 hover:bg-sky-600/50" target="_blank">VIEW LIVE</a>
+                    <a href="#" class="text-center text-slate-900 rounded py-2 px-4 bg-sky-600 hover:bg-sky-600/50" target="_blank">SOURCE CODE</a>
                 </div>
             </div>
         </li>
@@ -63,14 +63,13 @@ layout: default
                             seekvalue.style.borderRadius = ('5px');
                             seekvalue.style.height = ('1.2em');
                             seekvalue.style.margin = ('0.7em');
-                            seekvalue.style.background = ('blue');
+                            seekvalue.style.background = ('#334155');
                             seekbar.appendChild(seekvalue);
-                            techstack.innerHTML += `<li class='border border-red-200 rounded-full px-2 my-1 w-full'>${languages}</li>`;
+                            techstack.innerHTML += `<li>${languages}</li>`;
                         }
                     }
-                    console.log(data)
                 })
-                .catch(err => console.log(err))
+                .catch(err => alert('Error 403. Please Reload!'))
         }
         getTechstack();
     
