@@ -1,19 +1,17 @@
 ---
 layout: default
 ---
-
-
 <section class="about max-w-4xl mx-auto">
-    <div class="text-center">        
+    <div class="text-center">
         <h1 class="text-5xl" id="page-title">
             About Me
         </h1>
     </div>
-    <div class="flex flex-col md:flex-row justify-between gap-2 items-center">
-        <div class="avatar flex-2 h-fit">
+    <div class="flex flex-col md:flex-row justify-center p-2 gap-2 items-center">
+        <div class="w-[192px] my-5 origin-bottom -rotate-6 shadow-xl flex-2 h-fit p-2">
             <img class="img-fluid object-fit img-responsive" alt="image" src="{{site.avatar}}"
                 style="margin: 0 auto; max-width: 10em;">
-            <h5 class="text-center mt-3"><a href="../resume.pdf">View Resume</a></h5>
+            <h5 class="text-center mt-3"><a href="../resume.pdf" class="text-blue-300 underline">View Resume</a></h5>
         </div>
         <div class="p-3 flex-1 max-w-xl">
             Hi, I am Rajan Yadav pursuing my Bachelors in Engineering in Electronics and Telecommunication from Army
@@ -28,59 +26,61 @@ layout: default
 </section>
 
 <section class="pt-5">
-    <h1 class="mt-3 text-center text-3xl" id="heading">Skills</h1>
-    <ul class="mt-3 flex gap-2 flex-wrap mt-2 bg-slate-500 p-5">
-        <li>
-            <div>Frontend Dev</div>
-            <div class="flex flex-wrap gap-4">
+    <h1 class="mt-3 text-center text-3xl font-[oswald]">Skills</h1>
+    <ul class="flex gap-2 flex-wrap justify-center mt-2 bg-slate-700 p-2 rounded border-y-4 border-slate-900">
+        <li class="max-w-xs p-2 bg-slate-800 rounded grow">
+            <h5 class="text-2xl tracking-tight text-center mb-4 px-2 underline opacity-50">Frontend Development</h5>
+            <div class="flex flex-wrap gap-2 justify-center">
                 {% for tool in site.toolkit.frontend %}
-                <div class="list-unstyled px-4 border">
+                <div class="list-unstyled px-4 border border-gray-500">
                     {{tool}}
                 </div>
                 {% endfor %}
             </div>
         </li>
-        <li>
-            <div>Backend Dev</div>
-            <div class="flex flex-wrap gap-4">
-            {% for tool in site.toolkit.backend %}
-            <div class="list-unstyled px-2 text-left bg-gray-800">
-                {{tool}}
-            </div>
-            {% endfor %}
+        <li class="max-w-xs p-2 bg-slate-800 rounded grow">
+            <h5 class="text-2xl tracking-tight text-center mb-4 underline opacity-50 px-2">Backend Dev</h5>
+            <div class="flex flex-wrap gap-2 justify-center">
+                {% for tool in site.toolkit.backend %}
+                <div class="list-unstyled px-4 border border-gray-500">
+                    {{tool}}
+                </div>
+                {% endfor %}
             </div>
         </li>
-        <li>
-            <div>UI UX Designing</div>
-            <div class="flex flex-wrap gap-4">
+        <li class="max-w-xs p-2 bg-slate-800 rounded grow">
+            <h5 class="text-2xl tracking-tight text-center mb-4 underline opacity-50 px-2">UI UX Designing</h5>
+            <div class="flex flex-wrap gap-2 justify-center">
                 {% for tool in site.toolkit.designing %}
-                <div class="list-unstyled px-2 text-left bg-gray-800">
+                <div class="list-unstyled px-4 border border-gray-500">
                     {{tool}}
                 </div>
                 {% endfor %}
             </div>
         </li>
     </ul>
-
 </section>
 
 <section class="pt-5">
-    <h1 class="mt-3 text-center bg-secondary text-3xl" id="heading">Get in Touch</h1>
+    <h1 class="mt-3 text-center text-3xl font-[oswald]">Get in Touch</h1>
     <div class="text-center pb-5 pt-2 justify-content-center mt-2">
-        My email is <a href="mailto:mail.rajanydv@gmail.com" class="text-blue-400 underline">mail.rajanydv@gmail.com.</a><br>You are most
+        My email is <a href="mailto:mail.rajanydv@gmail.com"
+            class="text-blue-300 underline">mail.rajanydv@gmail.com.</a><br>You are most
         welcome to connect with me.
     </div>
 </section>
 
 <section class="text-center pt-5">
-    <h1 class="text-3xl" id="heading">About the Site</h1>
-    <p class="bg-gray-700 border-b-4 border-slate-900 p-2 max-w-2xl rounded mx-auto text-md mt-2">
-        I have used Jekyll to generate this site, tailwind bootstrap and sass for styling and I have used a few plugins
+    <h1 class="text-3xl font-[oswald]">About the Site</h1>
+    <p class="bg-slate-700 opacity-75 border-y-4 border-slate-900 p-2 max-w-2xl rounded mx-auto text-md mt-2">
+        I have used Jekyll to generate this site, tailwindCSS and sass for styling and I have used a few plugins
         to make this site work.
-        The website source is hosted on Github and the site itself is deployed in cloudflare.
+        The website source is hosted on <a href="https://github.com/hatchedland/nuboard-theme"
+            target="_blank" class="text-blue-300">Github</a> and the site itself is deployed in <a href="https://www.cloudflare.com/" class="text-blue-300">cloudflare</a>.
     </p>
-    <div class="text-center pt-5 mb-3 text-xs">
-        This site was created by <a href="https://rajan.works/" target="_blank" class="text-blue-400 underline">Rajan Yadav</a> and was made using <a
-            href="https://jekyllrb.com/" target="_blank" class="text-blue-400 underline">Jekyll</a>.<br>
+    <div class="text-center pt-5 mb-3 text-xs opacity-50">
+        This site was created by <a href="https://rajan.works/" target="_blank" class="text-blue-300">Rajan
+            Yadav</a> and was made using <a href="https://jekyllrb.com/" target="_blank"
+            class="text-blue-300">Jekyll</a>.<br>
         This blog is licensed under the MIT License unless otherwise stated.
     </div>
