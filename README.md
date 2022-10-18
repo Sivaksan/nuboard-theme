@@ -9,6 +9,7 @@ To use it, you must first have the latter dependencies installed.
 -   [Ruby](https://www.ruby-lang.org/en/downloads/) version **2.5.0** or higher, including all development headers (check your Ruby version using `ruby -v`)
 -   [RubyGems](https://rubygems.org/pages/download) (check your Gems version using `gem -v`)
 -   [GCC](https://gcc.gnu.org/install/) and [Make](https://www.gnu.org/software/make/) (check versions using `gcc -v`,`g++ -v`, and `make -v`)
+-   [NPM](https://www.npmjs.com/) for tailwind
 
 
 ## Installation
@@ -16,6 +17,12 @@ To use it, you must first have the latter dependencies installed.
 bundle
 ```
 This command installs the Gems mentioned in your `Gemfile.lock.`
+
+And to make tailwind work.
+
+``` console
+npm install
+```
 
 ## Running Local Server
 ```console
